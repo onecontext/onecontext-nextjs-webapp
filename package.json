@@ -1,5 +1,9 @@
 {
   "name": "ts_sdk_quickstart",
+  "type": "module",
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
   "version": "0.0.1",
   "description": "A template project for using OneContext",
   "main": "index.js",
@@ -12,8 +16,14 @@
   "author": "Ross Murphy",
   "license": "MIT",
   "dependencies": {
-    "@onecontext/ts_sdk": "^0.0.1",
+    "@onecontext/ts_sdk": "^1.1.7",
     "dotenv": "^16.4.5",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
   }
 }
