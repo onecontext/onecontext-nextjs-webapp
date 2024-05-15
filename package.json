@@ -1,0 +1,19 @@
+{
+  "name": "ts_sdk_quickstart",
+  "version": "0.0.1",
+  "description": "A template project for using OneContext",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "RAG"
+  ],
+  "author": "Ross Murphy",
+  "license": "MIT",
+  "dependencies": {
+    "@onecontext/ts_sdk": "^0.0.1",
+    "dotenv": "^16.4.5",
+    "path": "^0.12.7"
+  }
+}
