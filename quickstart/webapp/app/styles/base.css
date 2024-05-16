@@ -1,0 +1,49 @@
+@tailwind base;
+/* styles.css */
+
+main {
+  flex: 1
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.slanted-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: inherit;
+  transform: skewY(-3deg);
+  transform-origin: top left;
+}
+
+.slanted-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: inherit;
+  transform: skewY(3deg);
+  transform-origin: bottom left;
+}
+
+/* Ensure the section content is not skewed */
+.slanted-content {
+  position: relative;
+  z-index: 1;
+}
+
+.Toastify__progress-bar {
+  background: blue !important; /* Replace 'blue' with your preferred Tailwind color */
+  --toastify-color-progress-bgo: 0;
+}
+
