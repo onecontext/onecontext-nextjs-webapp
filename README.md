@@ -14,6 +14,21 @@ You can create up a WebApp that looks vaguely similar to apps like [Perplexity](
 and [You](https://you.com), with a chat interface, streaming responses, and which lets users "chat" with any corpus of
 information you can host in a OneContext knowledge base.
 
+For example:
+
+First upload a directory of files about Charlie Munger to a knowledge base:
+```zsh
+onecli knowledge-base upload directory --knowledge-base-name=demo_kb --metadata-json='{"tag": "charlie_munger"}'
+```
+
+Now just run the app, and ask it questions. The responses will be based on the most relevant data across all the documents / books you uploaded. The sources will be cited, where and when they are used.
+
+![initial page](public/before_question.jpeg)
+
+![get a context-ful answer back](public/answer_back.jpeg)
+
+![click on a citation and the source slides into view](public/scroll_to_4.jpeg)
+
 
 ## How to use it in your app
 
@@ -26,6 +41,10 @@ We assume you already have the following:
 
 If you do _not_ have these set up already, please do so first! You can do the above either via [Python](https://github.com/onecontext/onecontext-python), [TypeScript](https://github.com/onecontext/onecontext-typescript), or the [Command Line Tool](https://github.com/onecontext/onecontext-cli)
 
+If this is _your first time_ ever coming across OneContext, and none of these words make sense to you, please check out our [docs](https://docs.onecontext.ai) for a complete overview of the platform and how to use it.
+
+If anything is still unclear, [reach out!](mailto:hello@onecontext.ai)
+
 ## How the app works
 
 The app, in a nutshell, is 4 things.
@@ -35,7 +54,7 @@ The app, in a nutshell, is 4 things.
 3. A state manager
 4. A chatbot
 
-Let's do through these components, and how you can use them:
+Let's go through these components, and how you can use them:
 
 ### The Completion Method
 
@@ -46,6 +65,12 @@ You've _probably seen something similar_ to this before. It's basically just a P
 This is _probably a little different_ to other implementations because of two things:
 1. There is some logic for pruning down the context / chat history being passed to the model on each turn.
 2. This endpoint _streams_ the response from the language model back to the client.
+
+You should change the prompts you find in this file to serve your use-case. This example is set up to work with OpenAI, but it's a pretty similar set up for most language model providers.
+
+You can amend the `system prompt` by changing the system prompt returned from `amendSystemMessage`, and you can amend the `user prompt` by changing the `formatUserMessage` method.
+
+In this example, we are iterating over the `chunks` passed from the Context Method (below) in generating the `user prompt`. Feel free to explore various other options here.
 
 ### The Context Method
 
@@ -107,6 +132,20 @@ update the objects using an action defined on the provider.
 
 This file exports an `AI Provider` object, which comprises two `states` (the AI state, and the UI state), and one
 action (`contextChat`) which is used to update the AI state on each turn with the most relevant context from OneContext.
+
+This file shouldn't need as much tweaking as the aforementioned, unless you want to change the method by which we update
+the state, etc.
+
+### The chatbot
+
+This is a pretty straightforward page that allows users to have a dynamically updating chat with a body of content hosted on OneContext.
+
+It's got some handy helper functions like:
+- `scrollToBottom` (leverages the [useRef](https://react.dev/reference/react/useRef) hook) to scroll the latest messages into view automatically.
+- `augmentedSubmit` uses the contextChat action from the AI provider (defined above) to grab the most relevant context from OneContext before hitting the completion endpoint.
+- `selectSource` slides the cited source into view on the carousel when a user clicks on the citation.
+
+It also has some spinners and UI etc., but that's fairly standard these days.
 
 
 ## How do I run it?
@@ -175,6 +214,14 @@ export async function useAIStateOnTheServer() {
   return giveMeThis
 }
 ```
+## Wouldn't it be _even_ faster if OneContext just gave me the completion instead of the context?
+
+Yes. Yes it would. You wouldn't have to wait to receive the context back in the client before making another request to
+the completion endpoint.
+
+And that's why that's next on our feature-list! Next up is BYOK (bring your own keys), so instead of having to define
+a `completion` route in your app, you can just add a `completion` step at the end of your pipeline, and it will stream
+context-ful responses straight back to you.
 
 ## How do I find out more about how to use OneContext? 
 
