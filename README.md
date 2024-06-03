@@ -23,10 +23,13 @@ onecli knowledge-base upload directory --knowledge-base-name=demo_kb --metadata-
 
 Now just run the app, and ask it questions. The responses will be based on the most relevant data across all the documents / books you uploaded. The sources will be cited, where and when they are used.
 
+### A simple landing page
 ![initial page](public/before_question.jpeg)
 
+### Ask a question and get an answer back grounded in the context from your knowledge base
 ![get a context-ful answer back](public/answer_back.jpeg)
 
+### Click on a citation to dig into the particular source
 ![click on a citation and the source slides into view](public/scroll_to_4.jpeg)
 
 
