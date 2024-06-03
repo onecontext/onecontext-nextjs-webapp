@@ -61,6 +61,8 @@ the [TypeScript SDK](https://github.com/onecontext/onecontext-typescript). You d
 you just fire off a string to one your pre-defined RAG pipelines, and every step of the pipeline runs automatically on a
 GPU cluster at OneContext (for more on this see our [docs](https://docs.onecontext.ai).
 
+For your application, just modify the pipelineName and overrideArgs to suit your use case.
+
 ```typescript
 export async function contextGet(input: string): Promise<any> {
   "use server"
@@ -106,6 +108,7 @@ update the objects using an action defined on the provider.
 This file exports an `AI Provider` object, which comprises two `states` (the AI state, and the UI state), and one
 action (`contextChat`) which is used to update the AI state on each turn with the most relevant context from OneContext.
 
+
 ## How do I run it?
 
 ```zsh
@@ -116,7 +119,6 @@ npm run dev
 ```
 
 Now open `http://localhost:3000`.
-
 
 # FAQ
 
@@ -174,5 +176,21 @@ export async function useAIStateOnTheServer() {
 }
 ```
 
+## How do I find out more about how to use OneContext? 
 
+For more info on questions like:
+- What is a pipeline?
+- What is a vector index?
+- What is a knowledge base?
+- What is a step?
+- What exactly can I do with a pipeline?
 
+Please check out our [docs](https://docs.onecontext.ai)!
+
+Or, [just reach out via email](mailto:hello@onecontext.ai) and we'll be happy to help.
+
+## How can I get set up with a OneContext account?
+
+You can grab an API key [here](https://onecontext.ai/settings), and the easiest way to get started would be to follow
+the `quickstart` which is available on [the docs](https://docs.onecontext.ai), and also on any of the
+clients [[Python SDK](https://github.com/onecontext/onecontext-python), [TypeScript SDK](https://github.com/onecontext/onecontext-typescript), [CLI Tool](https://github.com/onecontext/onecontext-cli)]
