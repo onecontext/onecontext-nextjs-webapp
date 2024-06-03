@@ -25,7 +25,6 @@ export default function Index() {
     const sourcesRef = useRef<HTMLDivElement>(null)
     const {contextChat} = useActions<typeof AI>();
     const [aiState, setAiState] = useAIState()
-    console.log(aiState)
     const [ocInput, setOcInput] = useState('')
 
     const scrollToBottom = () => {
