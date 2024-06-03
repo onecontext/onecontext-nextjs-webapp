@@ -244,3 +244,13 @@ Or, [just reach out via email](mailto:hello@onecontext.ai) and we'll be happy to
 You can grab an API key [here](https://onecontext.ai/settings), and the easiest way to get started would be to follow
 the `quickstart` which is available on [the docs](https://docs.onecontext.ai), and also on any of the
 clients [[Python SDK](https://github.com/onecontext/onecontext-python), [TypeScript SDK](https://github.com/onecontext/onecontext-typescript), [CLI Tool](https://github.com/onecontext/onecontext-cli)]
+
+## Can I use this with another RAG provider?
+
+Go for it. You're free to do as you please with this software. You can just replace whatever you see in context/action.ts with your new provider.
+
+**N.B.** we don't think you should... and we like to think our RAG product is the best available, but we totally respect you might want to use other providers. 
+
+We would just ask 2 (small) favours if you do.
+- Please star and cite this repo.
+- Please send us a brief mail [here](mailto:hello@onecontext.ai) telling us why you preferred another provider to us. All feedback is useful feedback and we're always looking to find the best way to improve our product.
