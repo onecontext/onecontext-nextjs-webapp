@@ -1,29 +1,61 @@
 {
-  "name": "ts_sdk_quickstart",
-  "type": "module",
-  "compilerOptions": {
-    "esModuleInterop": true
-  },
-  "version": "0.0.1",
-  "description": "A template project for using OneContext",
-  "main": "index.js",
+  "name": "onecontext-quickstart-app",
+  "version": "0.2.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [
-    "RAG"
-  ],
-  "author": "Ross Murphy",
-  "license": "MIT",
+  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@onecontext/ts_sdk": "^1.1.7",
-    "dotenv": "^16.4.5",
-    "path": "^0.12.7"
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@onecontext/ts-sdk": "1.0.11",
+    "@types/react-dom": "18.2.7",
+    "@vercel/analytics": "^1.2.2",
+    "ai": "3.0.4",
+    "autoprefixer": "^10.4.18",
+    "axios": "^1.5.1",
+    "bootstrap": "^5.3.3",
+    "cheerio": "^1.0.0-rc.12",
+    "clsx": "^1.2.0",
+    "feed": "^4.2.2",
+    "motion": "^10.15.5",
+    "next": "^14.1",
+    "openai": "^4.28.4",
+    "react": "^18",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-toastify": "^10.0.5",
+    "react-tooltip": "^5.26.3",
+    "recma-import-images": "^0.0.2",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-katex": "^7.0.0",
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^6.0.0",
+    "remark-rehype-wrap": "^0.0.2",
+    "remark-unwrap-images": "^3.0.1",
+    "shiki": "^0.14.1",
+    "styled-components": "^6.0.8",
+    "swr": "^2.2.5",
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@types/node": "^20.12.4",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.7.2",
-    "typescript": "^5.4.5"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.2",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.35",
+    "react-spinners": "^0.13.8",
+    "sass": "^1.69.0",
+    "sharp": "^0.32.0",
+    "typescript": "^5.3.3"
   }
 }
