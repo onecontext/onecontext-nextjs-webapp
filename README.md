@@ -8,6 +8,8 @@ Provider` which has both:
 - (a) the most recent history of all the interactions between your user and your model.
 - (b) the most relevant context for the particular user and the particular interaction with the model (with the context coming from OneContext)
 
+Vercel AI provides the really handy omnipresent state, and we provide the context specifically for your user.
+
 ## What can I do with it?
 
 You can create up a WebApp that looks vaguely similar to apps like [Perplexity](https://perplexity.ai)
