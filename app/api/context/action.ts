@@ -10,11 +10,12 @@ export async function contextGet(input: string): Promise<any> {
 
   const runArgs: OneContext.RunType = {
     pipelineName: 'demo_query',
-    overrideArgs: {"retriever" : {"query": `${inputCleaned}`, "top_k": 10}, "reranker": {"query": `${inputCleaned}`}},
+    overrideArgs: {"query_embedder" : {"query": `${inputCleaned}`, "top_k": 10},},
     BASE_URL: process.env.BASE_URL!,
     API_KEY: process.env.API_KEY!
   }
   return await OneContext.runPipeline(runArgs).then((res) => {
+    console.log(`the res is ${res}`)
     return res
   })
 }
