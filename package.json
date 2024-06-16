@@ -12,7 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
-    "@onecontext/ts-sdk": "1.0.11",
+    "@onecontext/ts-sdk": "1.0.14",
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.2.2",
     "ai": "3.0.4",
